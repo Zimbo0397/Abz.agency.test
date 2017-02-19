@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 	jade = require('gulp-jade'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
-	uglify = require('gulp-uglify'),
+	// uglify = require('gulp-uglify'),
 	autoprefixer = require('gulp-autoprefixer'),
 	browserSync = require('browser-sync'),
 	reload = require('browser-sync').reload;
@@ -50,10 +50,10 @@ gulp.task('sass', function () {
 	gulp.src(path.src.style)
 		.pipe(sourcemaps.init())
 		.pipe(sass({
-			soursemap: true,
+			soursemap: false,
 			outputStyle: outputStyle
 		}).on('error', sass.logError))
-		.pipe(autoprefixer({browsers:['last 4 versions']}))
+		.pipe(autoprefixer({browsers:['last 2 versions']}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(path.dist.css))
 		.pipe(reload({stream:true}));
@@ -64,7 +64,7 @@ gulp.task('jade', function(){
 	var pretty = prod ? false : true;
 	gulp.src(path.src.html)
 		.pipe(jade({
-			pretty: true
+			pretty: false
 		}))
 		.pipe(gulp.dest(path.dist.html))
 		.pipe(reload({stream:true}));
@@ -72,7 +72,7 @@ gulp.task('jade', function(){
 
 // SCRIPTS
 gulp.task('scripts', function(){
-	var uglify = prod ? uglify() : function () {};
+	// var uglify = prod ? uglify() : function () {};
 	gulp.src(path.src.js)
 		// .pipe(uglify())
 		.pipe(gulp.dest(path.dist.js))

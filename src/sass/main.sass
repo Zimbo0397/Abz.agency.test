@@ -163,6 +163,14 @@ body
 		text-align: center
 		margin: 8px
 		margin-bottom: 26px
+		margin-left: calc(100% / 12 - 70px)
+		margin-right: calc(100% / 12 - 70px)
+		@media #{$media-xg-max}
+			margin-left: calc(100% / 8 - 70px)
+			margin-right: calc(100% / 8 - 70px)
+		@media #{$media-lg-max}
+			margin-left: calc(100% / 6 - 70px)
+			margin-right: calc(100% / 6 - 70px)
 		.image-block
 			border: 1px solid #e0e2e6
 			margin-bottom: 15px
@@ -249,6 +257,9 @@ body
 		transform: translateX(-50%) translateY(-50%) translateZ(0)
 
 
+//----------------------------------
+// .modal-inner
+//----------------------------------
 .modal-inner
 	h2
 		text-align: center
