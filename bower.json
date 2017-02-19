@@ -1,0 +1,25 @@
+{
+  "name": "ABZ_test",
+  "description": "ABZ test work",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [],
+  "authors": [
+    "V. Zbryzskiy"
+  ],
+  "license": "no license",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "jquery.browser": "latest",
+    "angular": "^1.6.2"
+  }
+}

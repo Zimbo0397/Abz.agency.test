@@ -1,0 +1,187 @@
+doctype html
+html(lang='ru', ng-app="dentApp")
+	head
+		title main
+
+		include ./partials/head.jade
+
+	body
+
+		//- jade mixins
+			
+
+		mixin newCompanyBlock(companyname, stat, location, image )
+
+			.aside-block.company
+
+				.block-body
+
+					.image-holder
+						
+						img.fake-img(src= image, alt= image)
+						.img(style='background-image: url( '+image+')')
+
+					h6= companyname
+
+					p= stat
+
+					p= location
+
+
+					a(href="#").link Follow Now
+
+		mixin newHumanBlock(userName, stat, location, image )
+
+			.aside-block.users
+				h6= userName
+				.block-body
+
+					.image-holder
+						
+						img.fake-img(src= image, alt= image)
+						.img(style='background-image: url( '+image+')')
+
+
+					p.status= stat
+
+					p= location
+
+
+					a(href="#").link Add Friend
+
+		mixin newProdBlock(prodname, desc, image )
+
+			.aside-block.product
+				h6= prodname
+				.block-body
+
+					.image-holder
+						
+						img.fake-img(src= image, alt= image)
+						.img(style='background-image: url( '+image+')')
+
+					p= desc
+
+		mixin newServBlock(name, image)
+
+			.service-block.flex-item
+				a(href="#")
+					.image-block
+
+						.image-holder
+
+							img.fake-img(src= image, alt= image)
+
+							.img(style='background-image: url( '+image+')')
+					.name
+						span= name
+
+		//- jade mixins end
+
+
+
+		include ./partials/noscript.jade
+		
+		include ./partials/top-line.jade
+
+
+		section.content
+			.container
+				.content-body
+					.panel-left
+
+						include ./partials/main-menu.jade
+
+						include ./partials/bunner.jade
+
+						.aside-list
+							h5 Featured Companies
+								a(href="#") See All
+							+newCompanyBlock(
+								'Company Name',
+								'Manufacturer',
+								'Belgrade, Serbia',
+								'img/content/company-1.png'
+							)
+							+newCompanyBlock(
+								'Company Name',
+								'Service Provider',
+								'New York, USA',
+								'img/content/company-2.png'
+							)
+							+newCompanyBlock(
+								'Company Name',
+								'Supplier',
+								'London, England',
+								'img/content/company-3.png'
+							)
+						include ./partials/footer.jade
+
+					.panel-right
+						.aside-list
+							h5 People you may know
+								a(href="#") See All
+							+newHumanBlock(
+								'Dennis Adams',
+								'Dentist (Practice Owner)',
+								'London, England',
+								'img/content/user-1.png'
+							)
+							+newHumanBlock(
+								'Mary Carpenter',
+								'Dentist (Practice Owner)',
+								'Belgrade, Serbia',
+								'img/content/user-2.png'
+							)
+							+newHumanBlock(
+								'Danielle Salazar',
+								'Dentist (Practice Owner)',
+								'Paris, France',
+								'img/content/user-3.png'
+							)
+						.aside-list.products
+							h5 Featured Products
+								a(href="#") See All
+							+newProdBlock(
+								'Product Name',
+								'Product Short Description. The quick brown fox jumps over the lazy dog.',
+								'img/content/side-1.png'
+							)
+							+newProdBlock(
+								'Product Name',
+								'Product Short Description. The quick brown fox jumps over the lazy dog.',
+								'img/content/side-2.png'
+							)
+
+					.service-directory(ng-controller="servicesCtrl")
+						.main-modal(class="ng-class: respSt ? '': 'open'")
+							.close-btn(ng-click="closeModal()")
+							.modal-inner
+								h2 Error {{resStatus}}
+								p Server response with status code - {{resStatus}} {{respText}} 
+						.serv-header
+							h3 Service Directory
+								a(href="#").add-button Add New Service
+						.services-list
+							.inline-layout.flex-horizontal
+								.service-block.flex-item(ng-repeat="item in services")
+									a(href="#")
+										.image-block
+
+											.image-holder
+
+												img(src='{{item.icon}}', alt='{{item.icon}}')
+
+										.name
+											span {{item.title}}
+								
+										
+
+
+
+					
+
+
+							
+
+		include ./partials/scripts.jade

@@ -1,0 +1,258 @@
+@import _mixins
+
+.chromeperfectpixel-initial-block iframe,
+#chromeperfectpixel-supported-by
+	display: none !important
+#__bs_notify__
+	display: none !important
+	opacity: 0 !important
+
+body
+	font: $font-stack
+	// &::-webkit-scrollbar
+	// 	height: 0
+	// 	width: 0
+	&.b-overflow
+		overflow: hidden
+
+
+
+//----------------------------------
+// TOP-line
+//----------------------------------
+.content
+	padding-top: 7px
+.content-body
+	padding-left: 233px
+	padding-right: 251px
+	position: relative
+	min-height: 1000px
+	.panel-left
+		position: absolute
+		top: 0
+		left: 0
+		width: 218px
+	.panel-right
+		width: 218px
+		position: absolute
+		top: 0px
+		right: 25px
+		padding-top: 10px
+
+
+
+//----------------------------------
+// bunner-block
+//----------------------------------
+.bunner-block
+	margin-top: 16px
+	padding-left: 8px
+	margin-bottom: 16px
+	h5
+		font-size: 1em
+		font-weight: 100
+		color: #7c8695
+		margin-bottom: 14px
+	.link
+		padding-bottom: 14px
+		border-bottom: 1px solid #e0e2e6
+		margin-top: 3px
+		a
+			font-size: 0.75em
+			color: #d3d3d3
+
+
+//----------------------------------
+// aside-list
+//----------------------------------
+.aside-list
+	padding-left: 8px
+	border-bottom: 1px solid #e0e2e6
+	padding-bottom: 4px
+	> h5
+		font-weight: 100
+		font-size: 1em
+		color: #7c8695
+		position: relative
+		padding-right: 47px
+		margin-bottom: 11px
+		a
+			position: absolute
+			top: 0
+			right: -1px
+			display: inline-block
+			color: #1c2534
+	.aside-block
+		margin-bottom: 15px
+		.block-body
+			padding-left: 89px
+			position: relative
+			height: 85px
+
+		.image-holder
+			position: absolute
+			top: 4px
+			left: 0
+			width: 80px
+			height: 80px
+			border-radius: 5px
+		h6,
+		p
+			font-size: 1.1em
+			font-weight: 100
+			color: #1c2534
+			margin-bottom: 1px
+			white-space: nowrap
+			overflow: hidden
+			text-overflow: ellipsis
+		
+		.link
+			font-size: 0.85em
+			color: #1c2534
+		&.users
+			margin-bottom: 17px
+			h6
+				margin-bottom: 1px
+			.status
+				height: 38px
+				overflow: hidden
+				white-space: normal
+	&.products
+		margin-top: 17px
+		p
+			white-space: normal
+			height: 90px
+			font-size: 1em
+			line-height: 1.25em
+
+
+
+
+//----------------------------------
+// service-directory
+//----------------------------------
+.service-directory
+	padding-bottom: 150px
+	.serv-header
+		h3
+			font-size: 2.15em
+			font-weight: 100
+			padding-right: 160px
+			position: relative
+			line-height: 1.4em
+			.add-button
+				display: inline-block
+				top: 5px
+				right: 1px
+				background: #87b448
+				position: absolute
+				font-size: 14px
+				padding: 6px 20px
+				border-radius: 4px
+				color: #fff
+	.services-list
+		border: 1px solid #e0e2e6
+		margin-top: 13px
+		border-radius: 3px
+		padding: 15px
+		.flex-horizontal
+			margin: -8px
+	.service-block
+		width: 139px
+		height: 174px
+		text-align: center
+		margin: 8px
+		margin-bottom: 26px
+		.image-block
+			border: 1px solid #e0e2e6
+			margin-bottom: 15px
+			transition: background .2s
+		.name
+			height: 35px
+			overflow: hidden
+			transition: color .2s
+		&:hover
+			.image-block
+				background: #f4f7fb
+				transition: background .2s
+			.name
+				color: $main-green
+				transition: color .2s
+
+
+
+//----------------------------------
+// footer
+//----------------------------------
+
+.footer
+	padding-top: 13px
+	font-size: 0.84em
+	padding-left: 8px
+	color: #b7bfcd
+	p
+		margin-bottom: 11px
+		color: inherit
+	a
+		font-size: 12px
+		margin-right: 17px
+		color: inherit
+
+
+.main-modal
+	position: fixed
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	opacity: 0
+	pointer-events: none
+	transition: opacity .2s
+	z-index: 56
+	
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: #fff
+		opacity: 0.97
+	&.open
+		opacity: 1
+		pointer-events: inherit
+		transition: opacity .2s
+	.close-btn
+		position: absolute
+		top: 20px
+		right: 20px
+		height: 40px
+		width: 40px
+		z-index: 5
+		border-radius: 50%
+		text-align: center
+		padding-top: 8px
+		background: url(../img/icons/close-btn.svg) 50% 50% no-repeat
+		background-size: cover
+		cursor: pointer
+	.modal-inner
+		max-width: 300px
+		padding-left: 20px
+		padding-right: 20px
+		width: 100%
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translateX(-50%) translateY(-50%) translateZ(0)
+
+
+.modal-inner
+	h2
+		text-align: center
+		font-size: 3em
+		line-height: 1.4em
+	p
+		font-size: 1.2em
